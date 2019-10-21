@@ -29,6 +29,9 @@ yarn run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Install visualstudio extensions
+
  Vetur
+ 
  ESLint
+ 
  Debugger for Chrome
