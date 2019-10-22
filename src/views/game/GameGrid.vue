@@ -46,7 +46,7 @@ export default {
     data: () => ({
         cellGrid: {
             1: '', 2: '', 3: '',
-            4: '', 5: 'X', 6: 'X',
+            4: '', 5: '', 6: '',
             7: '', 8: '', 9: ''
         },
         currentMark: 'O',
@@ -88,19 +88,19 @@ export default {
             }
             this.lastMark = this.currentMark
             this.cellGrid[key] = value
-            if (this.currentMark === '0') {
+            if (this.currentMark === 'O') {
                 this.currentMark = 'X'
-            } else {
+            } else { 
                 this.currentMark = 'O'
             }
         },
 
         resetGame() {
-            for(let i=1; i<9; i++) {
+            for(let i=1; i<10; i++) { 
                 this.cellGrid[i] = ''
             } 
             this.$bus.$emit('clearCell')
-            this.unLockGame()
+           this.unLockGame()
         },
 
         unLockGame() {
