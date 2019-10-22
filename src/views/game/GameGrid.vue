@@ -1,5 +1,13 @@
 <template>
+    
      <div class="grid">
+         
+        <div>
+            <span class="current-player">
+                 NU:
+            </span>
+            {{ currentMark }}
+        </div>
         <div class="row row-1">
             <game-grid-cell @mark="markCell" name="1" />
             <game-grid-cell @mark="markCell" name="2" />
@@ -29,6 +37,9 @@
         display: flex;
         flex-direction: row;
         flex: 1 1 auto;
+    }
+    .current-player {
+        font-family: Verdana, sans-serif
     }
 </style>
 <script>
