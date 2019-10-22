@@ -35,7 +35,7 @@ export default {
 
     methods: {
         updateScore(winner) {
-            this.score[winner] = this.score[winner] + '1'
+            this.score[winner] = this.score[winner] + 1
         },
 
         playAgain() {

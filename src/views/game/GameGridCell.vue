@@ -37,7 +37,7 @@ export default {
 
     methods: {
         markCell() {
-            if (this.$parent.gameLocked) {
+            if (this.$parent.gameLocked || this.mark.length > 0) {
                 return
             }
             this.mark = this.$parent.currentMark
