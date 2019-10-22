@@ -14,7 +14,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 15px;
+        height: 25px;
         background-color: #16a085;
         box-shadow: 10px solid #fff;
         padding: 20px;
