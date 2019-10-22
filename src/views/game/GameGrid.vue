@@ -71,7 +71,7 @@ export default {
                     if (me.weHaveWinner) {
                         me.gameLocked = true
                         me.$emit('winner', this.lastMark)
-                        return false // break loop
+                        return false// break loop
                     }
                 })
             
