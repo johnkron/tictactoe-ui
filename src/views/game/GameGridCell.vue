@@ -40,6 +40,9 @@ export default {
             if (this.$parent.gameLocked) {
                 return
             }
+            if (this.mark.length > 0) {
+                return
+            }                               
             this.mark = this.$parent.currentMark
             this.$emit('mark', this.name, this.mark)
         }
