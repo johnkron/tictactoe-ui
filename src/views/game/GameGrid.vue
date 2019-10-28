@@ -1,5 +1,13 @@
 <template>
+    
      <div class="grid">
+         
+        <div>
+            <span class="current-player">
+                 NU:
+            </span>
+            {{ currentMark }}
+        </div>
         <div class="row row-1">
             <game-grid-cell @mark="markCell" name="1" />
             <game-grid-cell @mark="markCell" name="2" />
@@ -30,6 +38,9 @@
         flex-direction: row;
         flex: 1 1 auto;
     }
+    .current-player {
+        font-family: Verdana, sans-serif
+    }
 </style>
 <script>
 
@@ -48,7 +59,7 @@ export default {
             1: '', 2: '', 3: '',
             4: '', 5: '', 6: '',
             7: '', 8: '', 9: ''
-        },
+        },                          
         currentMark: 'O',
         lastMark: null,
         winConditions: [
@@ -92,13 +103,13 @@ export default {
                 this.currentMark = 'X'
             } else {
                 this.currentMark = 'O'
-            }
+            }                                   
         },
 
         resetGame() {
-            for(let i=1; i<9; i++) {
+            for(let i=1; i<10; i++) {
                 this.cellGrid[i] = ''
-            } 
+            }                                  
             this.$bus.$emit('clearCell')
             this.unLockGame()
         },
