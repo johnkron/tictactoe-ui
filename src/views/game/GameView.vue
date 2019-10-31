@@ -3,6 +3,7 @@
         <game-score-board v-model="score" />
         <game-grid ref="gameGrid" @winner="updateScore" />
         <button @click="playAgain">Play again</button>
+         <button @click="leak">leak</button>
     </div>
 </template>
 <style scoped>
@@ -42,6 +43,17 @@ export default {
 
         playAgain() {
             this.$refs.gameGrid.resetGame()
+        },
+
+        leak() {
+ 
+            window.x = [];
+
+                for (var i = 0; i < 10000; i++) {
+                    document.body.appendChild(document.createElement('div'));
+                }
+                window.x.push(new Array(1000000).join('x'));
+        
         }
     }
 }
