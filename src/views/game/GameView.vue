@@ -1,9 +1,14 @@
 <template>
-    <div class="game-container">
-        <game-score-board v-model="score" />
-        <game-grid ref="gameGrid" @winner="updateScore" />
-        <button @click="playAgain">Play again</button>
-    </div>
+  <div class="game-container">
+    <game-score-board v-model="score" />
+    <game-grid
+      ref="gameGrid"
+      @winner="updateScore"
+    />
+    <button @click="playAgain">
+      Play again
+    </button>
+  </div>
 </template>
 <style scoped>
     .game-container {
@@ -35,7 +40,7 @@ export default {
 
     methods: {
         updateScore(winner) {
-            this.score[winner] = this.score[winner] + '1'
+            this.score[winner] = this.score[winner] + 1
         },
 
         playAgain() {

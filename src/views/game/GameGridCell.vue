@@ -1,5 +1,10 @@
 <template>
-    <div @click="markCell" class="cell">{{ mark }}</div>
+  <div
+    class="cell"
+    @click="markCell"
+  >
+    {{ mark }}
+  </div>
 </template>
 <style scoped>
     .cell {
@@ -16,17 +21,24 @@
     }
 </style>
 <script>
+import { type } from 'os'
 export default {
     name: 'GameGridCell',
+
+    props: {
+        value: {
+            type:String,
+            default: null
+        },
+        name: {
+            type: String
+            defult: null
+        }
+    },
 
     data: () => ({
         mark: ''
     }),
-
-    props: {
-        value: String,
-        name: String
-    },
 
     created() {
         let me = this

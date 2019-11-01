@@ -1,21 +1,48 @@
 <template>
-     <div class="grid">
-        <div class="row row-1">
-            <game-grid-cell @mark="markCell" name="1" />
-            <game-grid-cell @mark="markCell" name="2" />
-            <game-grid-cell @mark="markCell" name="3" />
-        </div>
-        <div class="row row-2">
-           <game-grid-cell @mark="markCell" name="4" />
-           <game-grid-cell @mark="markCell" name="5" />
-           <game-grid-cell @mark="markCell" name="6" />
-        </div>
-        <div class="row row-3">
-            <game-grid-cell @mark="markCell" name="7" />
-            <game-grid-cell @mark="markCell" name="8" />
-            <game-grid-cell @mark="markCell" name="9" />
-        </div>
+  <div class="grid">
+    <div class="row row-1">
+      <game-grid-cell
+        name="1"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="2"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="3"
+        @mark="markCell"
+      />
     </div>
+    <div class="row row-2">
+      <game-grid-cell
+        name="4"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="5"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="6"
+        @mark="markCell"
+      />
+    </div>
+    <div class="row row-3">
+      <game-grid-cell
+        name="7"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="8"
+        @mark="markCell"
+      />
+      <game-grid-cell
+        name="9"
+        @mark="markCell"
+      />
+    </div>
+  </div>
 </template>
 <style scoped>
     .grid {
@@ -46,7 +73,7 @@ export default {
     data: () => ({
         cellGrid: {
             1: '', 2: '', 3: '',
-            4: '', 5: 'X', 6: 'X',
+            4: '', 5: '', 6: '',
             7: '', 8: '', 9: ''
         },
         currentMark: 'O',
@@ -88,7 +115,7 @@ export default {
             }
             this.lastMark = this.currentMark
             this.cellGrid[key] = value
-            if (this.currentMark === '0') {
+            if (this.currentMark === 'O') {
                 this.currentMark = 'X'
             } else {
                 this.currentMark = 'O'
