@@ -1,5 +1,10 @@
 <template>
-    <div @click="markCell" class="cell">{{ mark }}</div>
+  <div 
+    class="cell"
+    @click="markCell"
+  >
+    {{ mark }}
+  </div>
 </template>
 <style scoped>
     .cell {
@@ -37,7 +42,7 @@ export default {
 
     methods: {
         markCell() {
-            if (this.$parent.gameLocked) {
+            if (this.$parent.gameLocked || this.mark.length > 0) {
                 return
             }
             this.mark = this.$parent.currentMark
