@@ -1,9 +1,10 @@
 <template>
-    <div class="score-board">
-        <span>O has {{ value.O }} wins</span>
-        <h2>Score Board</h2>
-        <span>X has {{ value.X }} wins</span>
-    </div>
+  <div class="score-board">
+    <span>O has {{ value.O }} wins</span>
+        
+    <span>Current player {{ value.mark }} </span>
+    <span>X has {{ value.X }} wins</span>
+  </div>
 </template>
 <style scoped>
     .score-board {
@@ -14,7 +15,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        height: 25px;
+        height: 15px;
         background-color: #16a085;
         box-shadow: 10px solid #fff;
         padding: 20px;
@@ -36,7 +37,10 @@ export default {
     name: 'GameScoreBoard',
 
     props: {
-        value: Object
+        value: {
+            type: Object,
+            default: null,
+            }
     }
 }
 </script>

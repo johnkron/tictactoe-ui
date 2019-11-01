@@ -27,7 +27,7 @@ body h1 {
 import GameView from './views/game/GameView'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     GameView
   }

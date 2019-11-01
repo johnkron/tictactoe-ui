@@ -1,5 +1,10 @@
 <template>
-    <div @click="markCell" class="cell">{{ mark }}</div>
+  <div
+    class="cell"
+    @click="markCell"
+  >
+    {{ mark }}
+  </div>
 </template>
 <style scoped>
     .cell {
@@ -10,6 +15,9 @@
         height: 90px;
         font-size: 3.5em;
         font-family: 'Gochi Hand', sans-serif;
+        text-align: center;
+        justify-content: center;
+    
     }
     .cell:hover {
         background-color: #7f8c8d;
@@ -19,14 +27,20 @@
 export default {
     name: 'GameGridCell',
 
+    props: {
+        value: {
+            type: String,
+            default: null,
+        }, 
+        name: {
+            type: String,
+            default: null,
+        }
+    },
+
     data: () => ({
         mark: ''
     }),
-
-    props: {
-        value: String,
-        name: String
-    },
 
     created() {
         let me = this
@@ -37,7 +51,7 @@ export default {
 
     methods: {
         markCell() {
-            if (this.$parent.gameLocked) {
+            if (this.$parent.gameLocked || this.mark.length > 0) {
                 return
             }
             this.mark = this.$parent.currentMark
