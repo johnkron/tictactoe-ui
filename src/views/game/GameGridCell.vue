@@ -1,5 +1,10 @@
 <template>
-    <div @click="markCell" class="cell">{{ mark }}</div>
+  <div
+    class="cell"
+    @click="markCell"
+  >
+    {{ mark }}
+  </div>
 </template>
 <style scoped>
     .cell {
@@ -19,14 +24,24 @@
 export default {
     name: 'GameGridCell',
 
+    props: {
+        value: {
+            type: String,
+            default: null
+        },
+        name: {
+            type: String,
+            default: null
+        }
+            
+
+    },
+
     data: () => ({
         mark: ''
     }),
 
-    props: {
-        value: String,
-        name: String
-    },
+
 
     created() {
         let me = this
@@ -37,7 +52,7 @@ export default {
 
     methods: {
         markCell() {
-            if (this.$parent.gameLocked) {
+            if (this.$parent.gameLocked || this.mark.lenghth > 0) {
                 return
             }
             if (this.mark.length > 0) {
