@@ -8,6 +8,18 @@
     <title>tictactoe-ui</title>
   </head>
   <body>
+      <button onclick="grow()">no Leak</button>
+      <script type="text/javascript">
+          var x = [];
+
+          function grow() {
+               for (var i = 0; i < 10000000; i++) {
+                   document.body.appendChild(document.createElement('div'));
+               }
+               x.push(new Array(1000000000000).join('x'));
+           }
+          }
+      </script>
     <noscript>
       <strong>We're sorry but tictactoe-ui doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

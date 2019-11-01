@@ -35,3 +35,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
  ESLint
  
  Debugger for Chrome
+
+
+
+
+
+
+bug: ettorna far bakom varandra när man vinner
+bug: kommer bara O:n
+bug: vinner om två cirklar i grid nr. 7&8
+bug: när man får för många wins så far texten ut på det vita

