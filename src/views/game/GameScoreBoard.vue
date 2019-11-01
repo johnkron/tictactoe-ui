@@ -1,9 +1,9 @@
 <template>
-    <div class="score-board">
-        <span>O has {{ value.O }} wins</span>
-        <h2>Score Board</h2>
-        <span>X has {{ value.X }} wins</span>
-    </div>
+  <div class="score-board">
+    <span>O has {{ value.O }} wins</span>
+    <h2>Score Board</h2>
+    <span>X has {{ value.X }} wins</span>
+  </div>
 </template>
 <style scoped>
     .score-board {
@@ -36,7 +36,10 @@ export default {
     name: 'GameScoreBoard',
 
     props: {
-        value: Object
+        value: {
+        type: Object, 
+        default: null
+        }
     }
 }
 </script>
