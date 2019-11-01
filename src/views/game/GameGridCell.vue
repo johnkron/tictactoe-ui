@@ -1,5 +1,11 @@
+/* eslint-disable vue/require-default-prop */
 <template>
-    <div @click="markCell" class="cell">{{ mark }}</div>
+  <div
+    class="cell"
+    @click="markCell"
+  >
+    {{ mark }}
+  </div>
 </template>
 <style scoped>
     .cell {
@@ -19,14 +25,16 @@
 export default {
     name: 'GameGridCell',
 
+    props: {
+        // eslint-disable-next-line vue/require-default-prop
+        value: String,
+        // eslint-disable-next-line vue/require-default-prop
+        name: String
+    },
+
     data: () => ({
         mark: ''
     }),
-
-    props: {
-        value: String,
-        name: String
-    },
 
     created() {
         let me = this
